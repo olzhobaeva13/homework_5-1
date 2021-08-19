@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{%block title%}
+    News
+{% endblock %}
+
+{%block content%}
+  <br>
+  <header>
+    <h4> Добро пожаловать! На этой страничке вы можете найти новости, небольшую информацию о сотрудниках и оставить свои контактные данные и вопрос (или нет)!</h4>
+  </header>
+  <br>
+  {% for post in posts %}
+          <p><h5><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h5></p>
+  {% endfor %}
+  
+{% endblock%}

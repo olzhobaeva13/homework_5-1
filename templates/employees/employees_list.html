@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+
+{%block title%}
+    Employees
+{% endblock %}
+
+{%block content%}
+    <br>
+    <header><h4>Кликните на Read, чтобы узнать подробнее о сотрудниках</h4></header>
+    <br>
+    {% for employee in employees %}
+        <div class="card mb-5">
+            <div class="card-header">
+            <h5>{{employee.full_name}}</h5>
+            </div>
+            <div class="card-body">
+            <p class="card-text">{{employee.position}}</p>
+            <a href="{{ employee.get_absolute_url }}" class="btn btn-primary">Read</a>
+            </div>
+        </div>
+    {%endfor%}
+</body>
+</html>
+{% endblock%}
+
+
+
+
